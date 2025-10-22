@@ -155,7 +155,9 @@ int main() {
     handle_result_from_round(round_result, player_score, computer_score);
   }
 
-  std::println("\nPlayer score: {} | Computer Score: {}", player_score,
+  output_separator();
+  std::println("Final Score:");
+  std::println("Player score: {} | Computer Score: {}\n", player_score,
                computer_score);
   if (player_score > computer_score) {
     std::println("You won the game!\n\n");
