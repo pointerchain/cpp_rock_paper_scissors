@@ -72,7 +72,7 @@ void output_choices(const Choice player_choice, const Choice computer_choice) {
   std::cout << "And the computer chose...";
   std::cout.flush();
   std::this_thread::sleep_for(std::chrono::milliseconds(500));
-  std::cout << std::format(" {}\n!", to_string(computer_choice));
+  std::cout << std::format(" {}!\n", to_string(computer_choice));
 }
 
 Result get_result_from_round(const Choice player_choice,
@@ -146,18 +146,18 @@ int main() {
         get_result_from_round(player_choice, computer_choice)};
 
     handle_result_from_round(round_result, player_score, computer_score);
-    std::cout << std::format("Player score: {} | Computer Score: {}\n\n",
+    std::cout << std::format("\nPlayer score: {} | Computer Score: {}\n\n",
                              player_score, computer_score);
   }
 
-  std::cout << std::format("Player score: {} | Computer Score: {}\n",
+  std::cout << std::format("\nPlayer score: {} | Computer Score: {}\n",
                            player_score, computer_score);
   if (player_score > computer_score) {
-    std::cout << "You won the game!\n";
+    std::cout << "You won the game!\n\n";
   } else if (player_score < computer_score) {
-    std::cout << "You lost the game...\n";
+    std::cout << "You lost the game...\n\n";
   } else {
-    std::cout << "The game was a draw.\n";
+    std::cout << "The game was a draw.\n\n";
   }
 
   return 0;
